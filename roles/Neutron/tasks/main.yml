@@ -1,0 +1,13 @@
+  - name: Install openstack (Neutron)
+    apt:
+      name:
+        - neutron-server
+        - neutron-plugin-ml2
+        - neutron-linuxbridge-agent
+        - neutron-l3-agent
+        - neutron-dhcp-agent
+        - neutron-metadata-agent
+        - python3-neutronclient
+      state: latest
+      update_cache: yes
+    when: ansible_distribution == "Ubuntu"
